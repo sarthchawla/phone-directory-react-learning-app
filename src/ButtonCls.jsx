@@ -17,10 +17,8 @@ function BtnFunc(myProps) { // stateless
 class Btn extends Component { // stateful
     constructor(props) {
         super();
-        console.log("inside btn constructor", this.props); 
     }
     render() {
-        console.log("inside btn render", this.props); 
         return (
             <button type={this.props.type} onClick={this.props.onClick}>{this.props.btnText}</button>
         )

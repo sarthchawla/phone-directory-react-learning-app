@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import PhoneDirectory from './PhoneDirectory';
 import reportWebVitals from './reportWebVitals';
-import AddSubs from './AddSubs';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AddSubs />
+    <PhoneDirectory />
   </React.StrictMode>,
   document.getElementById('root')
 );
