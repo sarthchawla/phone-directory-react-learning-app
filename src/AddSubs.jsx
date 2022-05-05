@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 
 class AddSubs extends Component {
 
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
 
         this.state = {
             id: 0,
@@ -39,9 +39,9 @@ class AddSubs extends Component {
             <div className="component-container">
                 <Head headName="Add Subs" />
 
-                <div className="component-body">
+                {/* <div className="component-body">
                     <Link to="/"><button className="custom-btn add-btn">BACK</button></Link>
-                </div>
+                </div> */}
 
                 <form className="subs-form" onSubmit={this.onFormSubmitted}>
 

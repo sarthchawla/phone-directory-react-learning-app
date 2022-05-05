@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import PhoneDirectory from './PhoneDirectory';
+import PhoneBookContainerWithRedux from './PhoneDirectoryContainer';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import contactReducer from './Reducer';
 
+const reduxStore = createStore(contactReducer);
 ReactDOM.render(
-  <React.StrictMode>
-    <PhoneDirectory />
-  </React.StrictMode>,
+  <Provider store={reduxStore}>
+    <PhoneBookContainerWithRedux />
+  </Provider>,
   document.getElementById('root')
 );
 

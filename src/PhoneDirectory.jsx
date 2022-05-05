@@ -4,13 +4,16 @@ import ShowSubs from "./ShowSubs";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 class PhoneDirectory extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
-            contacts: []
+            contacts: props.contacts
         }
+
     }
+
+
 
     addContact = (newContact) => { // contact is an object = {id, name, phone}
         let contacts = this.state.contacts;
@@ -43,18 +46,19 @@ class PhoneDirectory extends Component {
 
     render() {
         return (
-            <Router>
-                <div className="main-container">
-                    <Routes>
-                        <Route exact path="/" element={<ShowSubs myContacts={this.state.contacts} />
-                        } />
+            // <Router>
+            //     <div className="main-container">
+            //         <Routes>
+            //             {/* <Route exact path="/" element={<ShowSubs myContacts={this.state.contacts} />
+            //             } /> */}
 
-                        <Route path="/add" element={
-                            <AddSubs addNewContact={this.addContact} />
-                        } />
-                    </Routes>
-                </div>
-            </Router>
+            //             <Route path="/" element={
+            //                 <AddSubs addNewContact={this.props.addNewContact} />
+            //             } />
+            //         </Routes>
+            //     </div>
+            // </Router>
+            <AddSubs addNewContact={this.props.addNewContact} />
         )
     }
 }
